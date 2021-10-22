@@ -35,7 +35,9 @@
         "sidebar-1  content   sidebar-2"
         "sidebar-1  content   sidebar-2"
         "footer     footer    footer"
-    }
+        /* to leave it empty just leave a dot (.) */
+        /* "footer footer ." */
+      }
 
     .footer {
       grid-area: footer;
@@ -53,6 +55,7 @@
       grid-area: sidebar-2;
     }
 
+    /* now the layout will change with creen size */
     @media (max-width: 700px) {
       .container {
         grid-template-areas:

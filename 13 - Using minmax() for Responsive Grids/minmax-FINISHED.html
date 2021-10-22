@@ -21,7 +21,12 @@
       display: grid;
       grid-gap: 20px;
       border: 10px solid var(--yellow);
+      /* it will at least 150 px long in width, when there isn't enough space it will cover the whole width of the container,could be a good alternative to media queries  */
+      /* try both and for your oroject and find out which one works better for you  */
       /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+      /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+
+      /* fit-content works like a max value, with auto */
       grid-template-columns: fit-content(100px) 150px 150px 150px;
     }
   </style>

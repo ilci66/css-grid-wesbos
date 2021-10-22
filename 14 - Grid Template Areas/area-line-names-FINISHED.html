@@ -47,15 +47,24 @@
       display: grid;
       grid-gap: 20px;
       grid-template-areas:
+      /* instead of these any letter could be used as a name */
         "💩 💩 💩 💩 🍔 🍔 🍔 🍔"
         "💩 💩 💩 💩 🍔 🍔 🍔 🍔"
         "💩 💩 💩 💩 🍔 🍔 🍔 🍔"
         "💩 💩 💩 💩 🍔 🍔 🍔 🍔";
     }
-
+    /* playing with it a little: */
+    /* as now the item5 will take up all the space, grid will create implicit rows  */
+    .item5 {
+      grid-area: 🍔;
+    }
     .item3 {
+      /* grid-column: 💩-start / 💩-end */
+      /* it's like this: grid-column: {1 / -1;} */
       grid-column: 💩-start / 🍔-end;
-      grid-row-end: 💩-end;
+      /* grid-row-end will push it to the give value */
+      /* grid-row-end: 💩-end; */
+      /* when grid row end value is commented item no longer goes over item 3 */
     }
   </style>
 </body>
