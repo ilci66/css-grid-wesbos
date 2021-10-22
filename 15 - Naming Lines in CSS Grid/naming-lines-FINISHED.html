@@ -43,15 +43,22 @@
   </div>
 
   <style>
+    /* don't forget when naming lines, lines are not the columns themselves, they are in between columns */
+    /* The names are given in between square brackets */
     .container {
       display: grid;
       grid-gap: 20px;
+      /* again lines are not columns don't get confused */
+      /* multiple names can be given, you might wanna do multiple things at once  */
       grid-template-columns: [sidebar-start site-left] 1fr [sidebar-end content-start] 500px [content-end] 1fr [site-right];
+      /* I have given the first line the name content-top and the last one content bottom, the explicitly given last one not the implicit one  */
+      /* so it goes until the explitly defined limit */
       grid-template-rows: [content-top] repeat(10, auto) [content-bottom];
     }
 
     .item3 {
       background: slateblue;
+      /* covering all the explicitly defined rows and some of the columns */
       grid-column: content-start;
       grid-row: content-top / content-bottom;
       /* grid-row: 1 / span 10; */

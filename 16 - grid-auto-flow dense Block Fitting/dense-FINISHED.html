@@ -81,12 +81,19 @@
     <div class="item item69">69</div>
     <div class="item item70">70</div>
   </div>
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
 
   <style>
     .container {
       display: grid;
       grid-gap: 20px;
       grid-template-columns: repeat(10, 1fr);
+      /* "dense" makes the tracks fit into empty spaces */
+      /* so if the order is not important this can be used  */
       grid-auto-flow: dense;
     }
 
@@ -103,7 +110,7 @@
     .item:nth-child(9n) {
       grid-row: span 2;
     }
-
+    /* as nth child is more important and would overwrite the item18's properties here "!important" we kept the values we defined for it */
     .item18 {
       background: greenyellow !important;
       grid-column-end: -1 !important;

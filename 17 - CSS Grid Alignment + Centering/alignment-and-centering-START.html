@@ -67,10 +67,29 @@
       align-* is column axis
     */
 
+    /* I will be playing with the values so if I'm looking at my notes in the future, don't get confused with the values and stuff */
     .container {
       display: grid;
       grid-gap: 20px;
-      grid-template-columns: repeat(10, 1fr);
+      border: 10px solid var(--yellow);
+      grid-template-columns: repeat(10, 30px);
+      /* the items of the grid are only as wide as they need to be, to fix that we can give them the value of justify-content: stretch; */
+      grid-template-rows: repeat(5, 30px);
+      /* there is also someting called "place-items: center center;" but browser support is not hat wide apparently, and it also minimmizes the item,
+      its the equvalent of justifiy and align items, just a shorthand */
+      place-items: stretch stretch;
+      /* again, just playing with it */
+      justify-content: space-around;
+    }
+    
+    /* the items here are named itm because in the style.css file inside the assets folder there are css properties already defined for that name */
+    .itm{
+      background: limegreen;
+    }
+    /* align-self overwrites these placements */
+    .itm5 {
+      justify-self: center;
+      align-self: center;
     }
   </style>
 </body>
