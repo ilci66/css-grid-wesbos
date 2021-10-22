@@ -53,8 +53,17 @@
 
     .poop {
       background: #BADA55;
+      /* this is shorthand for grid-column-start: 2, and grid-column-end: auto; */
+      /* or I could shooe it this way */
+      /* grid-column: 2 / 5; */
+      /* grid-column: span 2 / 5; */
+      grid-column: 2 / span 3;
       grid-column: span 2;
+      /* from start to the end, like width: 100% */
       grid-row: 1 / -1;
+      /* Not very useful but, to take up the entire grid:  */
+      /* grid-column: 1 / -1; */
+      /* grid-row: 1 / -1; */
     }
   </style>
 </body>

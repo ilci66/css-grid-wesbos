@@ -30,9 +30,14 @@
   <style>
     .container {
       display: grid;
+      /* default height of an element is is the height of it's content */
+      /* when given a height tracks will fit by expanding or shrinking */
       height: 600px;
       grid-gap: 20px;
+      /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+      /* grid-template-rows: 1fr 1fr 1fr 1fr; */
       border: 10px solid var(--yellow);
+      /* the auto keywod will set the size necessary for the content inside the track */
       grid-template-columns: auto 1fr auto 1fr;
     }
   </style>

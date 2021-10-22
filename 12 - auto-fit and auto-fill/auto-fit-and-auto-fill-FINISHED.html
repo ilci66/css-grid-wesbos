@@ -21,12 +21,17 @@
       display: grid;
       grid-gap: 20px;
       border: 10px solid var(--yellow);
+      /* with auto fill solid line for the explicit one, goes till until it can't fit any more tracks  */
+      /* grid-template-columns: repeat(auto-fill, 50px); */
+      /* with auto fit solid line stays at the border of the last item */
       grid-template-columns: repeat(auto-fit, 150px);
     }
 
+    /* this is the same as: */
+    /* .item4 {grid-column: auto / -1;} */
     .item4 {
       grid-column-end: -1;
-    }
+    } 
   </style>
 </body>
 

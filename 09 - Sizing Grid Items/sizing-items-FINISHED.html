@@ -49,9 +49,10 @@
       grid-gap: 20px;
       grid-template-columns: repeat(5, 1fr);
     }
-
+    /* in order to make the track fit left like this it can leave empty spaces in the grid */
     .item9 {
       background: mistyrose;
+      /* it goes beyond the limits of the explicit grid, behind the solid line to make it fit */
       grid-column: span 10;
       grid-row: span 2;
     }
