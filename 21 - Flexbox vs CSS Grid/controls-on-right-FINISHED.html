@@ -48,18 +48,58 @@
       <button>⭐</button>
       <button>❤️</button>
       <button>❌</button>
+      <button>⭐</button>
+      <button>❤️</button>
+      <button>❌</button>
+      <button>⭐</button>
+      <button>❤️</button>
+      <button>❌</button>
+    </div>
+    <div class="track">
+      <h2>Bow Wow (That's My Name) (Ft. Snoop Dogg)</h2>
+      <h2>Bow Wow (That's My Name) (Ft. Snoop Dogg)</h2>
+      <button>⭐</button>
+      <button>❤️</button>
+      <button>❌</button>
+      <button>⭐</button>
+      <button>❤️</button>
+      <button>❌</button>
+      <button>⭐</button>
+      <button>❤️</button>
+      <button>❌</button>
+    </div>
+    <div class="test">
+      <p>my own grid item</p>
+      <p>Open</p>
+      <p>Close</p>
     </div>
   </div>
   <style>
+    
     .track {
       background: white;
       padding: 10px;
       display: grid;
       grid-template-columns: 1fr;
+      /* grid-auto-flow: column; is the important oene here really, as it's adding the new ones as columns */
       grid-auto-flow: column;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
+    /* so yeah I did my own little test and "grid-auto-flow: column;" is the key here  */
+    /* .test{
+      color:maroon;
+      font-size: 2rem;
+      background:lime;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-flow: column;
+    }
+    .test > * {
+      margin: 5px;
+    } */
   </style>
+
 </body>
 
 </html>

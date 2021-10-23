@@ -34,14 +34,18 @@
   </div>
 
   <style>
+    /* reversing the order is very easey with flexbox but with grid I would have to use the order property and if htere so many items 
+    it becomes just too boring */
     .flipper {
       display: grid;
       grid-gap: 10px;
       grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     }
-
+    
     .flipper.flip {
       grid-template-columns: 1fr;
+      /* to change the direction as I could with the flex: */
+      /* grid-template-rows: 1fr; */
     }
   </style>
 </body>
