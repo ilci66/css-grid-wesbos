@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+  <h1>A lot more functionality could be done but it was a good example for grid</h1>
   <div class="overlay">
     <div class="overlay-inner">
       <button class="close">× Close</button>
@@ -44,7 +44,8 @@
     p {
       margin: 0 0 20px 0;
     }
-
+    
+    /* just the close button */
     .close {
       background: none;
       color: black;
@@ -59,7 +60,10 @@
     }
 
     .item {
+      /* when the overflow is not hidden the item overlay shows at the bottom even before the hover*/
       overflow: hidden;
+      /* making the item grid makes it a lot easier to have the overlay appear on the images, otherwise 
+      with display absolute achieving the same effect requires more code  */
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
@@ -68,8 +72,11 @@
     .item img {
       grid-column: 1 / -1;
       grid-row: 1 / -1;
+      /* cover only works well and doesn't stretch the pic because of the width and height values I set as 100% here */
       width: 100%;
       height: 100%;
+      /* it feels like I might forget to use this from time to time, so when in doubt check all the possibilities 
+      there aren't that many */
       object-fit: cover;
     }
 
@@ -82,6 +89,7 @@
       justify-items: center;
       align-items: center;
       transition: 0.2s;
+      /* hiding it at the very bottom */
       transform: translateY(100%);
     }
 
@@ -95,6 +103,7 @@
     }
 
     .item:hover .item__overlay {
+      /* moving it to the top, therefore covering the image */
       transform: translateY(0);
     }
 
@@ -125,6 +134,8 @@
 
 
     .overlay {
+      /* again, because I turned my grid items into grids I can just use position fixed for item-overlay and it will cover my 
+      image the way i want */
       position: fixed;
       background: rgba(0, 0, 0, 0.7);
       top: 0;
@@ -136,6 +147,7 @@
     }
 
     .overlay.open {
+      /* well I would use flex for this but I guess it makes more sense to go with grid as it's a grid tutorial after all */
       display: grid;
       align-items: center;
       justify-items: center;
@@ -158,6 +170,7 @@
     const overlayImage = overlay.querySelector('img');
     const overlayClose = overlay.querySelector('.close');
 
+    // Creating the necessary html for the images
     function generateHTML([h, v]) {
       return `
         <div class="item h${h} v${v}">
@@ -174,8 +187,10 @@
     }
 
     function handleClick(e) {
+      // selecting the source of the image, inside the cliked div
       const src = e.currentTarget.querySelector('img').src;
       overlayImage.src = src;
+      // removing and adding the class "open" to open and close the overlay
       overlay.classList.add('open');
     }
 
@@ -184,15 +199,27 @@
       overlay.classList.remove('open');
     }
 
+    // I should go deeper into array methods 
+    // this array.from method creates 50 arrays ofrandom number pairs inside and array, awesome stuff, 
+    // I would probably use a loop to do this, so much cleaner this way
+    // concatenating bunch of [1,1]s to cover the gaps better, I could probably figure out and algorithm for it but it's not a 
+    // javascript tutorial so moving on
     const digits = Array.from({ length: 50 }, () => [randomNumber(4), randomNumber(4)]).concat([[1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1], [1, 1]])
+    console.log(digits)
 
+    // mapping inside the digits and giving them as arguments to generateHTML, deconstructuring the arrays here, setting random v and h 
+    // values for setting the spans later
     const html = digits.map(generateHTML).join('');
+    // adding all the html I created to the gallery section  
     gallery.innerHTML = html;
 
+    // all the divs that containe images are given class name "item"
     const items = document.querySelectorAll('.item');
 
+    // opens overlay
     items.forEach(item => item.addEventListener('click', handleClick));
 
+    // well obviously closes overlay
     overlayClose.addEventListener('click', close);
 
   </script>
