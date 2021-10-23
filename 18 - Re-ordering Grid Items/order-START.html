@@ -18,9 +18,24 @@
   </div>
 
   <style>
+    /* every item has the order set as 0 so if you wanna change one you need to set order properties for all  */
+    /* don't use it when the order of things really matter while being read, for example don't change the order of paragraphs and stuff */
     .container {
       display: grid;
       grid-gap: 20px;
+      grid-template-columns: repeat(5, 1fr);
+    }
+    .logo{
+      grid-column: span 2  /3;
+      order:2
+    }
+    .content{
+      grid-column: 1  / -1;
+      order:1
+    }
+    .nav{
+      grid-column: span 3  / 6;
+      order:3
     }
   </style>
 </body>
