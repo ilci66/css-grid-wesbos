@@ -19,7 +19,13 @@
   </div>
 
   <style>
-    .stacked {}
+    .stacked {
+      display: flex;
+      /* telling what to do when it doesn't fit */
+      justify-content: space-around;
+      flex-wrap: wrap;
+      /* I use this one ofthen already */
+    }
 
     .stacked>* {
       width: 30%;

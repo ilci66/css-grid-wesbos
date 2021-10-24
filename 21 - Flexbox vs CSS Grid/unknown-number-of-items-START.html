@@ -24,7 +24,13 @@
   </div>
 
   <style>
-    .unknown {}
+    .unknown {
+      display: grid;
+      /* this is really useful */
+      /* no weird flexbox margin errors, fits well and fluidly */
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      grid-gap: 10px;
+    }
   </style>
 </body>
 

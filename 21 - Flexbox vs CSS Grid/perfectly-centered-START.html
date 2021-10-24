@@ -20,6 +20,15 @@
     .hero {
       height: 200px;
       background: rgba(255, 255, 255, 0.2);
+      /* display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; */
+      /* to achieve the same thing in grid: */
+      display: grid;
+      justify-items: center;
+      /* align-items: center; ==> this one creates big grids, not as big as the content inside  */
+      align-content: center;
     }
   </style>
 </body>

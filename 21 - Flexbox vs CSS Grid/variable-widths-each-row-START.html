@@ -21,10 +21,18 @@
     <div class="item">Short</div>
   </div>
   <style>
-    .flex-container {}
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      border: 2px solid blue;
+      /* apparently as there are no flex gaps yet peope are doing this to create margins on the sides of the container: */
+      /* margin-right: -10px; */
+    }
 
     .flex-container>* {
+      /* makes them grow and use up the space left by the flex container */
       margin: 10px;
+      flex: 1;
     }
   </style>
 </body>

@@ -22,8 +22,14 @@
   </div>
 
   <style>
+    /* this is for when you know how many columns do you havebut on idea about the size of the content inside */
     .known {
-      margin: 100px 0;
+      /* margin: 100px 0; */
+      display: grid;
+      /* don't leave a space after repeat */
+      grid-template-columns: repeat(5, auto);
+      grid-gap: 10px;
+      justify-content: center;
     }
   </style>
 

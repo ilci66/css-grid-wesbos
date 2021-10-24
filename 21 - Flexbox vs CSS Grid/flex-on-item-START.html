@@ -20,8 +20,16 @@
   </div>
 
   <style>
+    /* for this case flexbox will work better */
     .controls {
       margin: 200px 0;
+      /* even just by adding this it starts looking decent */
+      display: flex;
+      align-items: center;
+      /* in grid I would have to write this to achieve a similar behaviour */
+      /* with that layout deleting a button will mess up the placements */
+      /* display: grid;
+      grid-template-columns: auto auto auto 1fr auto auto; */
     }
 
     .scrubber {
@@ -29,6 +37,8 @@
       height: 10px;
       min-width: 100px;
       border-radius: 10px;
+      /* this is the same as flex grow, now it fits the page better */
+      flex: 1;
     }
   </style>
 
