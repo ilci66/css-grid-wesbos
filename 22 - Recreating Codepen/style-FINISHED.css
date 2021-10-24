@@ -38,12 +38,14 @@ h6 {
 
 .codepen {
   display: grid;
+  /* header and footer take as much space as necessary the content will share the rest */
   grid-template-rows: auto 1fr 1fr auto;
   height: 100vh;
   color: white;
 }
 
 .codepen >* {
+  /* just so the seperations are clear */
   border:1px solid black;
 }
 
@@ -51,17 +53,20 @@ h6 {
 /* Editor! */
 .code {
   display:grid;
+  /* 3 identical boxes */
   grid-template-columns: repeat(3, 1fr);
   background: #1b2b34;
 }
 
 .editor {
+  /* this is the part that says html css js, the titles will take up as much as necessary, code will take the rest */
   display: grid;
   grid-template-rows: auto 1fr;
 }
 
 .editor__header {
   display: grid;
+  /* it goes like: settings title arrow  */
   grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: 5px;
@@ -71,6 +76,7 @@ h6 {
 
 .editor__code {
   display: grid;
+  /* textarea gets the rest of the space */
   grid-template-columns: auto 1fr;
 }
 
@@ -79,10 +85,12 @@ h6 {
   padding: 0 10px;
 }
 
+/* in both row and column it's given 1fr so it will cover the rest and be big as big as it can be  */
 .editor__input {
   resize: none;
   background: none;
-  border: 0;
+  /* I added the border myself to make it more visible */
+  border: 2px solid lime;
   color: grey;
   font-size: 16px;
   line-height: 19px;
@@ -93,7 +101,9 @@ h6 {
 .pen {
   display: grid;
   grid-template-columns: 1fr;
+  /* this is the reason why it pushes the rest of the content to the other side :*/
   grid-auto-flow: column;
+
   align-items: center;
   grid-gap: 10px;
   background: black;
@@ -108,6 +118,7 @@ h6 {
 
 /* Buttons */
 
+/* normal button stuff */
 .button {
   background: var(--grey);
   border: 0;
@@ -123,6 +134,7 @@ h6 {
   padding: 4px;
 }
 
+/* creating the line here */
 .button--dirty:before {
   background: #ffc600;
   display: block;
@@ -140,3 +152,5 @@ h6 {
   background: black;
   border-top: 1px solid grey;
 }
+
+/* it seems very complex but with grid turns out it's not so complicated, I should look for more use cases for grid instead of flexbox in future projects */
