@@ -27,8 +27,7 @@
     </div>
 
 
-    <p>She said that he loved baseball, and James Earl Jones; said that he's got god talking inside of his thoughts while he's
-      rounding those bases on his way back home</p>
+    <p>She said that he loved baseball, and James Earl Jones; said that he's got god talking inside of his thoughts while he's rounding those bases on his way back home</p>
 
     <blockquote>
       <p>"If you build it, they will come"</p>
@@ -143,6 +142,7 @@
 
     a {
       color: black;
+      /* cool wavy yellow instead of that boring blue */
       text-decoration: underline wavy var(--yellow);
     }
 
@@ -159,15 +159,18 @@
       max-width: 1000px;
       margin: 200px auto;
       grid-gap: 10px 50px;
+      /* Using percentages caused a horizontal overflow so it' s better practise to go with fr */
       grid-template-columns: 3fr 12fr 5fr;
     }
 
     .post>* {
+      /* instead of 2 / 3, know that you are leaving space for the side */
       grid-column: 2 / -2;
     }
 
     .post>figure {
       margin: 0;
+      /* images are given 100% width */
       grid-column: 1 / -1;
     }
 
@@ -186,10 +189,14 @@
     .tip {
       background: #FAFAFA;
       padding: 10px;
+      /* span is 5 because this is more like a template, we don't know how long will the content be so we are playing it 
+      safe, if content is shorter than 5 rows there will be an accumulation of empty spaces but it doesn't really look 
+      horrible  */
       grid-row: span 5;
       align-self: start;
     }
 
+    /* keeping them where they supposed to be  */
     .tip-left {
       grid-column: 1 / span 1;
       text-align: right;
